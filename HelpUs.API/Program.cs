@@ -89,12 +89,14 @@ var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
 await Seeder.SeedDatabase(context);
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
 
+app.UseSwagger();
+app.UseSwaggerUI();
 //app.UseHttpsRedirection();
 
 app.UseAuthentication();
