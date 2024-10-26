@@ -109,7 +109,7 @@ namespace HelpUs.API.Services.ProjectServices
             projectToUpdate.Description = !string.IsNullOrEmpty(projectCreateDto.Description) ? projectCreateDto.Description! : projectToUpdate.Description;
             projectToUpdate.Image = !string.IsNullOrEmpty(imageUrl) ? imageUrl! : projectToUpdate.Image;
             projectToUpdate.TargetAmount = !projectCreateDto.TargetAmount.Equals(0) ? projectCreateDto.TargetAmount : projectToUpdate.TargetAmount;
-            projectToUpdate.DateUpdated = DateTime.Now;
+            projectToUpdate.DateUpdated = DateTime.UtcNow;
 
             var isUpdated = await projectRepo.UpdateAsync(projectToUpdate);
 
